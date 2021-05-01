@@ -1,20 +1,11 @@
-import Component from "./components/Component/Component";
+import Header from "./components/Header/Header";
 
-class App extends Component<HTMLDivElement, HTMLHeadingElement> {
+class App {
 
     constructor(hostId: string) {
-        super(hostId, "h1");
-
-        this.renderContent();
-        this.configure();
+        new Header(hostId);
     }
 
-    configure() {
-    }
-
-    renderContent() {
-        this.element.textContent = "Hello World";
-    }
 }
 
 export default App;

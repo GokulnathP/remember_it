@@ -1,0 +1,33 @@
+import Component from "../../Component/Component";
+import AutoBind from "../../../decorators/AutoBind";
+
+import "./search.scss";
+import template from "./search.template";
+
+class Search extends Component<HTMLLIElement, HTMLFormElement> {
+
+    constructor(hostId: string) {
+        super(hostId, "form");
+        this.element.id = "search-form";
+
+        this.renderContent();
+        this.configure();
+    }
+
+    @AutoBind
+    private submitHandler(event: Event) {
+        event.preventDefault();
+        const searchText = this.element.querySelector('input')!.value;
+        console.log(searchText);
+    }
+
+    configure(): void {
+        this.element.addEventListener("submit", this.submitHandler);
+    }
+
+    renderContent(): void {
+        this.element.innerHTML = template;
+    }
+}
+
+export default Search;

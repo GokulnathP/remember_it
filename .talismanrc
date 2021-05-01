@@ -1,3 +1,5 @@
 fileignoreconfig:
 - filename: package-lock.json
   checksum: dacdeb19c74690880b68fea7000d6c6bb9540d4e41e9aa50c09ad9270590a99f
+- filename: public/fonts/fontawesome-webfont.svg
+  checksum: 6ca6066d89fb07f8054479bc6ff19ef84b45c372158ab8ab50d40de1f9cb0441

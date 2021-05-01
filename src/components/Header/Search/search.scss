@@ -1,0 +1,48 @@
+#search-form {
+  position: relative;
+
+  input {
+    height: 35px;
+    width: 200px;
+    text-align: left;
+    padding: 2px 2px 2px 35px;
+    border-radius: 15px;
+    border: none;
+  }
+
+  i {
+    position: absolute;
+    top: 8px;
+    font-size: 18px;
+    left: 12px;
+    color: gray;
+  }
+
+  input:focus {
+    outline: none;
+  }
+}
+
+.fa {
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+
+.fa-lg {
+  font-size: 1.33333333em;
+  line-height: .75em;
+  vertical-align: -15%
+}
+
+.fa-search:before {
+  content: "\f002"
+}
+
+@media (max-width: 450px) {
+  #search-form input {
+    width: 150px;
+  }
+}
