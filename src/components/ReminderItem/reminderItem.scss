@@ -1,0 +1,71 @@
+.reminder {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #2a29ca;
+  box-shadow: 0.5px 1px 1px 0.5px grey;
+  border-radius: 5px;
+  min-height: 100px;
+  height: 100%;
+  justify-content: space-between;
+  gap: 20px;
+  text-align: justify;
+  margin: auto;
+
+  .reminder-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+
+    .reminder-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      width: 100%;
+    }
+
+    a {
+      word-wrap: anywhere;
+    }
+
+    .fa-copy:before {
+      content: "\f0c5";
+      color: #2a29ca;
+    }
+  }
+
+  .reminder-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .fa-edit:before {
+      content: "\f044";
+      color: green;
+    }
+
+    .fa-trash:before {
+      content: "\f1f8";
+      color: red;
+    }
+
+    .fa-heart-o:before {
+      content: "\f08a";
+      margin-right: 5px;
+      color: orange;
+    }
+
+    .fa-heart:before {
+      content: "\f004";
+      margin-right: 5px;
+      color: orange;
+    }
+  }
+
+}
