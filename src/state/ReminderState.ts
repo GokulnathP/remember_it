@@ -33,6 +33,17 @@ class ReminderState extends State<Reminder> {
         this.notify();
     }
 
+    @AutoBind
+    toggleFavorite(reminderId: string) {
+        this.reminders = this.reminders.map(reminder => {
+            if(reminder.id == reminderId) {
+                reminder.favorite = !reminder.favorite;
+            }
+            return reminder;
+        });
+        this.notify();
+    }
+
     protected notify() {
         for (const listener of this.listeners) {
             listener(this.reminders.slice());
