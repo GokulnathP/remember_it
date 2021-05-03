@@ -27,6 +27,12 @@ class ReminderState extends State<Reminder> {
         this.notify();
     }
 
+    @AutoBind
+    deleteReminder(reminderId: string) {
+        this.reminders = this.reminders.filter(reminder => reminder.id != reminderId);
+        this.notify();
+    }
+
     protected notify() {
         for (const listener of this.listeners) {
             listener(this.reminders.slice());
