@@ -16,6 +16,17 @@ class ReminderState extends State<Reminder> {
         this.notify();
     }
 
+    @AutoBind
+    updateReminder(reminder: Reminder) {
+        this.reminders = this.reminders.map(oldReminder => {
+            if(oldReminder.id == reminder.id) {
+                return reminder;
+            }
+            return oldReminder;
+        });
+        this.notify();
+    }
+
     protected notify() {
         for (const listener of this.listeners) {
             listener(this.reminders.slice());
