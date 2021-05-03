@@ -1,0 +1,86 @@
+#reminder-form {
+  position: fixed;
+  top: 20vh;
+  left: calc((95vw - max(min(500px, 50%), 300px)) / 2);
+  z-index: 100;
+  border: 1px solid grey;
+  border-radius: 10px;
+  background: white;
+  display: block;
+  width: 50%;
+  min-width: 300px;
+  max-width: 500px;
+  padding: 10px;
+
+  h2 {
+    text-align: center;
+    padding: 10px 0 0;
+  }
+
+  .input-item {
+    position: relative;
+    width: 90%;
+    margin: 20px auto;
+    padding: 10px 0;
+  }
+
+  label {
+    position: absolute;
+    top: -5px;
+    left: 5px;
+    padding: 3px 8px;
+    display: block;
+    color: #2a29ca;
+    background: white;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  input {
+    width: 100%;
+    padding: 20px 10px 15px;
+    display: block;
+    font-size: 16px;
+  }
+
+  .form-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    margin: 20px auto;
+
+    button {
+      width: 45%;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: all 1s ease-in-out;
+      color: white;
+    }
+
+    #reminder-form-submit {
+      background: #2a29ca linear-gradient(to right, #2a29ca 50%, white 50%) left bottom;
+      background-size: 200% 100%;
+      border: 1px solid #2a29ca;
+    }
+
+    #reminder-form-submit:hover {
+      background-position: right top;
+      color: #2a29ca;
+    }
+
+    #reminder-form-cancel {
+      background: #cb0000 linear-gradient(to right, #cb0000 50%, white 50%) right bottom;
+      background-size: 200% 100%;
+      border: 1px solid #cb0000;
+      color: #cb0000;
+    }
+
+    #reminder-form-cancel:hover {
+      background-position: left top;
+      color: white;
+    }
+  }
+}
