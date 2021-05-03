@@ -1,5 +1,6 @@
 import State from "./State";
 import Reminder from "../models/Reminder";
+import AutoBind from "../decorators/AutoBind";
 
 class ReminderState extends State<Reminder> {
     private static instance: ReminderState;
@@ -7,6 +8,12 @@ class ReminderState extends State<Reminder> {
 
     private constructor() {
         super();
+    }
+
+    @AutoBind
+    addReminder(reminder: Reminder) {
+        this.reminders.push(reminder);
+        this.notify();
     }
 
     protected notify() {
