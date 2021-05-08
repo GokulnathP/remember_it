@@ -1,0 +1,48 @@
+#footer {
+  width: 100%;
+  min-height: 100px;
+  border-top: 2px solid #2a29ca;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 80px 0 20px;
+}
+
+#github {
+  display: block;
+  color: white;
+  background: rgba(42, 41, 202, 0.9);
+  padding: 8px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+#github:hover {
+  background: rgba(42, 41, 202, 1);
+}
+
+#feedback {
+  font-size: 18px;
+  color: black;
+}
+
+.fa-external-link:before {
+  content: "\f08e";
+  font-size: 16px;
+  color: #2a29ca;
+}
+
+.fa-github:before {
+  content: "\f09b";
+}
+
+@media (max-width: 600px) {
+
+  #footer {
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+  }
+
+}
