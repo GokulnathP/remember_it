@@ -33,13 +33,23 @@ class ReminderList extends Component<HTMLDivElement, HTMLDivElement> {
         this.element.innerHTML = template;
         this.element.querySelector('h2')!.textContent = (this.favorite ? 'Favorite ' : 'Other ') + 'Reminders';
         this.element.querySelector('div')!.id = (this.favorite ? '' : 'non-') + 'favorite-reminder-list';
+        this.renderReminders();
     }
 
     private renderReminders() {
-        this.element.querySelector('div')!.innerHTML = '';
-        for (let reminder of this.reminders) {
-            new ReminderItem((this.favorite ? '' : 'non-') + 'favorite-' + this.element.id, reminder);
+        const remindersDiv = this.element.querySelector('div')!;
+        remindersDiv.innerHTML = '';
+
+        if (this.reminders.length) {
+            for (let reminder of this.reminders) {
+                remindersDiv.className = '';
+                new ReminderItem((this.favorite ? '' : 'non-') + 'favorite-' + this.element.id, reminder);
+            }
+        } else {
+            remindersDiv.className = 'center';
+            remindersDiv.innerHTML = 'No reminders yet! Add a one!!';
         }
+
     }
 
 }
