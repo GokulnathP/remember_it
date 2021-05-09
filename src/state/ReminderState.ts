@@ -5,6 +5,7 @@ import AutoBind from "../decorators/AutoBind";
 class ReminderState extends State<Reminder> {
     private static instance: ReminderState;
     private reminders: Reminder[] = [];
+    private filterText: string = "";
 
     private constructor() {
         super();
@@ -44,9 +45,19 @@ class ReminderState extends State<Reminder> {
         this.notify();
     }
 
+    @AutoBind
+    updateFilter(filterText: string) {
+        this.filterText = filterText;
+        this.notify();
+    }
+
+    private filterReminders(): Reminder[] {
+        return this.reminders.filter(reminder => reminder.title.toLowerCase().search(this.filterText.toLowerCase()) >= 0);
+    }
+
     protected notify() {
         for (const listener of this.listeners) {
-            listener(this.reminders.slice());
+            listener(this.filterReminders().slice());
         }
     }
 

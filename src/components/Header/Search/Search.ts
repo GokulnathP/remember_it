@@ -1,8 +1,9 @@
 import Component from "../../Component/Component";
 import AutoBind from "../../../decorators/AutoBind";
+import ReminderState from "../../../state/ReminderState";
+import template from "./search.template";
 
 import "./search.scss";
-import template from "./search.template";
 
 class Search extends Component<HTMLLIElement, HTMLFormElement> {
 
@@ -18,7 +19,7 @@ class Search extends Component<HTMLLIElement, HTMLFormElement> {
     private submitHandler(event: Event) {
         event.preventDefault();
         const searchText = this.element.querySelector('input')!.value;
-        console.log(searchText);
+        ReminderState.updateFilter(searchText);
     }
 
     configure(): void {
