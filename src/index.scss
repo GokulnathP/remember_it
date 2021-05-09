@@ -17,3 +17,43 @@
   line-height: .75em;
   vertical-align: -15%
 }
+
+.form-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  margin: 20px auto;
+}
+
+.btn {
+  width: 45%;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 1s ease-in-out;
+  color: white;
+}
+
+.success-btn {
+  background: #2a29ca linear-gradient(to right, #2a29ca 50%, white 50%) left bottom;
+  background-size: 200% 100%;
+  border: 1px solid #2a29ca;
+}
+
+.success-btn:hover {
+  background-position: right top;
+  color: #2a29ca;
+}
+
+.danger-btn {
+  background: #cb0000 linear-gradient(to right, #cb0000 50%, white 50%) right bottom;
+  background-size: 200% 100%;
+  border: 1px solid #cb0000;
+  color: #cb0000;
+}
+
+.danger-btn:hover {
+  background-position: left top;
+  color: white;
+}

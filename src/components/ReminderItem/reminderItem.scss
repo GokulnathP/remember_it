@@ -36,6 +36,11 @@
     .fa-copy:before {
       content: "\f0c5";
       color: #2a29ca;
+      cursor: pointer;
+    }
+
+    .fa-copy:hover {
+      font-size: 22px;
     }
   }
 
@@ -48,6 +53,11 @@
     .fa-edit:before {
       content: "\f044";
       color: green;
+    }
+
+    .fa-edit:hover, .fa-heart:hover, .fa-heart-o:hover, .fa-trash:hover {
+      cursor: pointer;
+      font-size: 22px;
     }
 
     .fa-trash:before {

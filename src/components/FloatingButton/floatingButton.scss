@@ -12,4 +12,9 @@
 .fa-plus:before {
   content: "\f067";
   color: white;
+  cursor: pointer;
+}
+
+.fa-plus:hover {
+  font-size: 22px;
 }

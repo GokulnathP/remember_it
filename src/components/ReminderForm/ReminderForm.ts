@@ -59,7 +59,7 @@ class ReminderForm extends Component<HTMLDivElement, HTMLFormElement> {
 
     @AutoBind
     destroy() {
-        this.element.removeEventListener("click", this.submitHandler);
+        this.element.removeEventListener("submit", this.submitHandler);
         this.element.style.display = "none";
         this.backdrop.destroy();
     }

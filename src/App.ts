@@ -5,6 +5,7 @@ import ReminderForm from "./components/ReminderForm/ReminderForm";
 import AutoBind from "./decorators/AutoBind";
 
 import './app.scss';
+import DeleteConfirmation from "./components/DeleteConfirmation/DeleteConfirmation";
 
 class App extends Component<HTMLDivElement, HTMLDivElement> {
 

@@ -7,6 +7,7 @@ import ReminderForm from "../ReminderForm/ReminderForm";
 import Draggable from "../../models/Draggable";
 
 import './reminderItem.scss';
+import DeleteConfirmation from "../DeleteConfirmation/DeleteConfirmation";
 
 class ReminderItem extends Component<HTMLDivElement, HTMLDivElement> implements Draggable {
 
@@ -40,8 +41,13 @@ class ReminderItem extends Component<HTMLDivElement, HTMLDivElement> implements 
     }
 
     @AutoBind
-    editHandler(event: Event) {
+    editHandler(_: Event) {
         new ReminderForm(this.hostId, this.reminder);
+    }
+
+    @AutoBind
+    deleteHandler(_: Event) {
+        new DeleteConfirmation(this.hostId, this.reminder.id);
     }
 
     configure(): void {
@@ -50,7 +56,7 @@ class ReminderItem extends Component<HTMLDivElement, HTMLDivElement> implements 
         this.element.querySelector("#copy-btn")!.addEventListener("click", this.copyHandler);
         this.element.querySelector("#favorite-btn")!.addEventListener("click", ReminderState.toggleFavorite.bind(this, this.reminder.id));
         this.element.querySelector("#edit-btn")!.addEventListener("click", this.editHandler);
-        this.element.querySelector("#delete-btn")!.addEventListener("click", ReminderState.deleteReminder.bind(this, this.reminder.id));
+        this.element.querySelector("#delete-btn")!.addEventListener("click", this.deleteHandler);
     }
 
     renderContent(): void {

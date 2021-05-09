@@ -9,7 +9,7 @@ export default `
         <input type="url" placeholder="Link here" id="link-input" required/>
     </div>
     <div class="form-actions">
-        <button type="submit" id="reminder-form-submit">Submit</button>
-        <button type="button" id="reminder-form-cancel">Cancel</button>
+        <button type="submit" id="reminder-form-submit" class="btn success-btn">Submit</button>
+        <button type="button" id="reminder-form-cancel" class="btn danger-btn">Cancel</button>
     </div>
 `;
