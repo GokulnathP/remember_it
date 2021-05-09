@@ -1,0 +1,12 @@
+#snackbar {
+  position: fixed;
+  bottom: 10px;
+  right: 10%;
+  width: 80%;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  text-align: center;
+  transition: opacity 1s ease-in;
+  z-index: 100;
+}

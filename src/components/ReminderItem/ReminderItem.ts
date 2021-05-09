@@ -5,6 +5,7 @@ import ReminderState from "../../state/ReminderState";
 import AutoBind from "../../decorators/AutoBind";
 import ReminderForm from "../ReminderForm/ReminderForm";
 import Draggable from "../../models/Draggable";
+import Snackbar from "../Snackbar/Snackbar";
 
 import './reminderItem.scss';
 import DeleteConfirmation from "../DeleteConfirmation/DeleteConfirmation";
@@ -34,9 +35,13 @@ class ReminderItem extends Component<HTMLDivElement, HTMLDivElement> implements 
     @AutoBind
     copyHandler() {
         if(navigator.clipboard) {
-            navigator.clipboard.writeText(this.reminder.link);
+            navigator
+                .clipboard
+                .writeText(this.reminder.link)
+                .then(() => new Snackbar(this.hostId, "Link copied successfully"))
+                .catch(() => new Snackbar(this.hostId, "Cannot copy to clipboard"));
         } else {
-            console.log("Cannot copy to clipboard");
+            new Snackbar(this.hostId, "Your browser didn't support copy");
         }
     }
 
