@@ -4,17 +4,30 @@ import Reminder from "../../models/Reminder";
 import ReminderState from "../../state/ReminderState";
 import AutoBind from "../../decorators/AutoBind";
 import ReminderForm from "../ReminderForm/ReminderForm";
+import Draggable from "../../models/Draggable";
 
 import './reminderItem.scss';
 
-class ReminderItem extends Component<HTMLDivElement, HTMLDivElement> {
+class ReminderItem extends Component<HTMLDivElement, HTMLDivElement> implements Draggable {
 
     constructor(private hostId: string, public reminder: Reminder) {
         super(hostId, "div");
+        this.element.draggable = true;
         this.element.className = "reminder";
 
         this.renderContent();
         this.configure();
+    }
+
+    @AutoBind
+    dragStartHandler(event: DragEvent): void {
+        const dataKey = "text/" + (this.reminder.favorite ? "" : "non-") + "fav";
+        event.dataTransfer!.setData(dataKey , this.reminder.id);
+        event.dataTransfer!.dropEffect = "move";
+    }
+
+    @AutoBind
+    dragEndHandler(_: DragEvent): void {
     }
 
     @AutoBind
@@ -32,6 +45,8 @@ class ReminderItem extends Component<HTMLDivElement, HTMLDivElement> {
     }
 
     configure(): void {
+        this.element.addEventListener("dragstart", this.dragStartHandler);
+        this.element.addEventListener("dragend", this.dragEndHandler);
         this.element.querySelector("#copy-btn")!.addEventListener("click", this.copyHandler);
         this.element.querySelector("#favorite-btn")!.addEventListener("click", ReminderState.toggleFavorite.bind(this, this.reminder.id));
         this.element.querySelector("#edit-btn")!.addEventListener("click", this.editHandler);

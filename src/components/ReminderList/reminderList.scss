@@ -36,3 +36,15 @@
   }
 }
 
+.droppable {
+  box-shadow: 0 0 0 2px #2a29ca;
+  outline: 2px dashed white;
+  animation: 0.2s animateBorder infinite;
+}
+
+@keyframes animateBorder {
+  to {
+    outline-color: #2a29ca;
+    box-shadow: 0 0 0 2px white;
+  }
+}
