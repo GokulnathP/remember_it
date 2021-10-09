@@ -5,3 +5,5 @@ fileignoreconfig:
   checksum: 6ca6066d89fb07f8054479bc6ff19ef84b45c372158ab8ab50d40de1f9cb0441
 - filename: src/components/ReminderItem/ReminderItem.ts
   checksum: 824a12c45d8b0f181a6200eda9fc226680532e70ed3c229e184fae0d29f033a2
+- filename: yarn.lock
+  checksum: 485801920461489a79b2e71388b68601dee5c428ec5b2573381b53223c8fb3cd
