@@ -1,10 +1,10 @@
 import Component from "../Component/Component";
 import template from "./deleteConfirmation.template";
-
-import "./deleteConfirmation.scss";
 import AutoBind from "../../decorators/AutoBind";
 import Backdrop from "../Backdrop/Backdrop";
 import ReminderState from "../../state/ReminderState";
+
+import "./deleteConfirmation.scss";
 
 class DeleteConfirmation extends Component<HTMLDivElement, HTMLDivElement> {
     private backdrop: Backdrop;
@@ -19,8 +19,8 @@ class DeleteConfirmation extends Component<HTMLDivElement, HTMLDivElement> {
     }
 
     @AutoBind
-    deleteReminder() {
-        ReminderState.deleteReminder(this.reminderId);
+    async deleteReminder() {
+        await ReminderState.deleteReminder(this.reminderId);
         this.destroy();
     }
 

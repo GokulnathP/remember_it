@@ -31,6 +31,13 @@
             font-style: normal
         }
     </style>
+    <script>
+        if('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./serviceWorker.js').then(function () {
+                console.log('[Service worker] registered.');
+            });
+        }
+    </script>
 </head>
 <body>
 <div id="main"></div>

@@ -3,7 +3,12 @@ fileignoreconfig:
   checksum: dacdeb19c74690880b68fea7000d6c6bb9540d4e41e9aa50c09ad9270590a99f
 - filename: public/fonts/fontawesome-webfont.svg
   checksum: 6ca6066d89fb07f8054479bc6ff19ef84b45c372158ab8ab50d40de1f9cb0441
+- filename: public/serviceWorker.js
+  checksum: a09dfb65d9190aae6ec3a4059f536574433e516772214ae0e6904bb086c4fbf6
 - filename: src/components/ReminderItem/ReminderItem.ts
   checksum: 824a12c45d8b0f181a6200eda9fc226680532e70ed3c229e184fae0d29f033a2
+- filename: src/database/IndexedDBConnection.ts
+  checksum: 87c4f3725ae7887f704f474c24d081911e9081ee7a218401d53a2f8f77d84633
 - filename: yarn.lock
   checksum: 485801920461489a79b2e71388b68601dee5c428ec5b2573381b53223c8fb3cd
+version: "1.0"

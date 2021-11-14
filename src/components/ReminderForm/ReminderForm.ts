@@ -22,19 +22,17 @@ class ReminderForm extends Component<HTMLDivElement, HTMLFormElement> {
     }
 
     @AutoBind
-    submitHandler(event: Event) {
+    async submitHandler(event: Event) {
         event.preventDefault();
-        let reminder: Reminder;
+        this.destroy();
 
         if (this.reminder) {
-            reminder = new Reminder(this.reminder.id, this.titleInput!.value, this.linkInput!.value, this.reminder.favorite);
-            ReminderState.updateReminder(reminder);
+            const reminder = new Reminder(this.reminder.id, this.titleInput!.value, this.linkInput!.value, this.reminder.favorite);
+            await ReminderState.updateReminder(reminder);
         } else {
-            reminder = new Reminder(randomString(), this.titleInput!.value, this.linkInput!.value);
-            ReminderState.addReminder(reminder);
+            const reminder = new Reminder(randomString(), this.titleInput!.value, this.linkInput!.value);
+            await ReminderState.addReminder(reminder);
         }
-
-        this.destroy();
     }
 
     configure(): void {
@@ -43,7 +41,7 @@ class ReminderForm extends Component<HTMLDivElement, HTMLFormElement> {
     }
 
     renderContent(): void {
-        this.element.id = 'reminder-form';
+        this.element.id = "reminder-form";
         this.element.innerHTML = template;
         this.titleInput = this.element.querySelector("#title-input") as HTMLInputElement;
         this.linkInput = this.element.querySelector("#link-input") as HTMLInputElement;
