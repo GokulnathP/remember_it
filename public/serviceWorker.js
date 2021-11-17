@@ -14,6 +14,7 @@ const STATIC_REQUESTS = [
 
 self.addEventListener('install', function (event) {
     console.log('[Service worker] installing....');
+    self.skipWaiting();
     event.waitUntil(
         caches.open(STATIC_CACHE_NAME)
             .then(function (cache) {
