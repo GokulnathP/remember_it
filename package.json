@@ -4,7 +4,7 @@
   "description": "This is PWA based link storing webpage",
   "main": "src/index.ts",
   "scripts": {
-    "start": "webpack serve",
+    "preview": "webpack serve",
     "build": "NODE_ENV=production webpack --config webpack.config.prod.js",
     "test": "jest"
   },
