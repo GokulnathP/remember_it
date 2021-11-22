@@ -4,7 +4,7 @@ fileignoreconfig:
 - filename: public/fonts/fontawesome-webfont.svg
   checksum: 6ca6066d89fb07f8054479bc6ff19ef84b45c372158ab8ab50d40de1f9cb0441
 - filename: public/serviceWorker.js
-  checksum: a09dfb65d9190aae6ec3a4059f536574433e516772214ae0e6904bb086c4fbf6
+  checksum: ab8e942bb384898f9f98bddf6417f231ce4f3c0742e29af7cac5f8f08c937444
 - filename: src/components/ReminderItem/ReminderItem.ts
   checksum: 824a12c45d8b0f181a6200eda9fc226680532e70ed3c229e184fae0d29f033a2
 - filename: src/database/IndexedDBConnection.ts
