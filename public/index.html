@@ -21,6 +21,9 @@
     <meta content="./icons/app-icon-114x114.png" name="msapplication-TileImage"/>
     <meta content="#fff" name="msapplication-TileColor"/>
     <meta content="#3f51b5" name="theme-color"/>
+    <meta name="description" content="Web app to store all the links offline"/>
+    <meta name="keywords" content="links, remember, remember it, link remember"/>
+    <link rel="icon" href="./favicon.ico" sizes="any" type="image/ico"/>
     <title>Remember It</title>
     <style>
         @font-face {
@@ -32,7 +35,7 @@
         }
     </style>
     <script>
-        if('serviceWorker' in navigator) {
+        if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('./serviceWorker.js').then(function () {
                 console.log('[Service worker] registered.');
             });
